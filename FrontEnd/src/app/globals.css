@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fondo: #1A1D1A;
+  --botones: #FF3E1A;
+  --titulos: #97D6DF;
+  --subTitulos: #447988;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @apply min-h-screen bg-cover bg-center bg-no-repeat;
+  background-image: url('/assets/loginyregister/fondo.png');
+  color: #447988;
+  overflow-x: hidden;
+  position: relative;
+
+  /* Asegúrate de que el body tenga posición relativa */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 29, 26, 0.765);
+  z-index: 0;
+  /* Asegúrate de que este z-index sea menor */
+}
+
+.elemento {
+  position: relative;
+  /* Asegúrate de que los elementos tengan un contexto de apilamiento */
+  z-index: 2;
+  /* Este z-index debe ser mayor que el de la máscara */
+}
+
+.links {
+  text-decoration: none;
+  color: #447988;
+}
+
+label {
+  color: #97D6DF;
+}
+
+ul {
+  list-style: none;
+}
+
+.boton {
+  @apply rounded-full border-2 border-[#97D6DF] bg-[#FF3E1A] px-6 py-2 text-sm font-bold uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-[#FF5722] focus:bg-[#FF3E1A] focus:outline-none focus:ring-0 active:bg-[#E64A19];
+}
+
+.boton-aprobar{
+  @apply rounded-full border-2 border-[#112d31] bg-[#22b346] px-6 py-2 text-sm font-bold uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-[#43aa23] focus:bg-[#1af0ff] focus:outline-none focus:ring-0 active:bg-[#37e231];
+}
+
+.boton-corregir{
+  @apply rounded-full border-2 border-[#112d31] bg-[#a8ce21] px-6 py-2 text-sm font-bold uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-[#f1ff2a] focus:bg-[#ffc21a] focus:outline-none focus:ring-0 active:bg-[#caff39];
+}
+
+.boton-denegar{
+  @apply rounded-full border-2 border-[#112d31] bg-[#df2a2a] px-6 py-2 text-sm font-bold uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-[#ff2d2d] focus:bg-[#ff3c1a] focus:outline-none focus:ring-0 active:bg-[#ff2121];
+}
+
+
+.navbar {
+  @apply fixed top-36 mx-0 left-0 right-0 z-20 bg-[--fondo] border-2 border-[#97D6DF];
+}
+.menu {
+  @apply flex flex-col items-center justify-center;
+}
+
+.navbar-boton {
+  @apply mx-1 p-2;
+}
+
+.navbar-boton:hover {
+  @apply bg-gray-500 text-white;
+}
+
+
+
+.count.red {
+  color: red; 
+}
+
+.count.hidden {
+  display: none; 
+}
+
+.count {
+  color: #000; 
+}
+
+.active {
+  @apply bg-gray-400 text-[--botones];
+}
+
+.sticky {
+  @apply top-0 left-0 right-0;
+  position: fixed;
+}
+
+/* Aumentar el tamaño de los mensajes de error */
+p.error-message {
+  font-size: 14px;
+}
